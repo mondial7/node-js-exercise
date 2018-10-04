@@ -28,7 +28,7 @@ function extractText(path) {
  */
 function countWords(content) {
   let frequencies = {}
-  content.explode(' ').forEach(word => {
+  content.split(' ').forEach(word => {
     word = word.trim().replace(/\W/g, '')
     if (word.length > 0 && isWhitelisted(word)) {
       // else count and add to result matrix
