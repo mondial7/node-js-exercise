@@ -60,21 +60,21 @@ const isBlackListed = (word, elements) => {
  * @param {String}    word
  * @return {Boolean}
  */
-const isArticle = word => isBlackListed(word, Dictionary.ARTICLES)
+const isArticle = word => isBlackListed(word, ARTICLES)
 
 /**
  * Match a word with a preposition
  * @param {String}    word
  * @return {Boolean}
  */
-const isPreposition = word => isBlackListed(word, Dictionary.PREPOSITIONS)
+const isPreposition = word => isBlackListed(word, PREPOSITIONS)
 
 /**
  * Match a word with a pronoun
  * @param {String}    word
  * @return {Boolean}
  */
-const isPronoun = word => isBlackListed(word, Dictionary.PRONOUNS)
+const isPronoun = word => isBlackListed(word, PRONOUNS)
 
 /**
  * Expose utilities functions
