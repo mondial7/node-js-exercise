@@ -33,7 +33,7 @@ function countWords(content) {
     if (word.length > 0 && isWhitelisted(word)) {
       // else count and add to result matrix
       frequencies[word] = Number.isInteger(frequencies[word])
-                          ? frequencies[word]++
+                          ? frequencies[word] + 1
                           : 1
     }
   })
