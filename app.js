@@ -12,9 +12,9 @@ const fs = require('fs')
 const Utils = require('./utils')
 
 // store inputs parameters
-const files = process.argv.splice(0, 2)
+const files = process.argv.splice(2)
 
-console.log(`Trying to analyse ${files.length-2} files.`)
+console.log(`Trying to analyse ${files.length} files.`)
 
 let n = 0
 for (let i = 0; i < files.length; i++) {
