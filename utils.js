@@ -29,7 +29,7 @@ function extractText(path) {
 function countWords(content) {
   let frequencies = {}
   content.replace(/\W/g, ' ').split(' ').forEach(word => {
-    word = word.trim()
+    word = word.toLowerCase().trim()
     if (word.length > 0 && isWhitelisted(word)) {
       // else count and add to result matrix
       frequencies[word] = Number.isInteger(frequencies[word])
