@@ -79,7 +79,7 @@ const isPronoun = word => isBlackListed(word, Dictionary.PRONOUNS)
 /**
  * Expose utilities functions
  */
-modules.export = {
+module.exports = {
   isArticle,
   isPreposition,
   isPronoun,
