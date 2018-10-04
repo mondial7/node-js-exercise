@@ -18,7 +18,7 @@ function isWhitelisted(word) {
  * @return {String}   return empty string in case of error
  */
 function extractText(path) {
-  return fs.readFileSync(path)
+  return fs.readFileSync(path).toString()
 }
 
 /**
