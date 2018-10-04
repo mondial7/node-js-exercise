@@ -1,34 +1,52 @@
+const fs = require('fs')
 const Dictionary = require('./dictionary')
 
 /**
+ * Check if the word should be counted
+ * @param {String}  word
+ * @return {Boolean}
+ */
+function isWhitelisted(word) {
+  return !Dictionary.isArticle(word) &&
+         !Dictionary.isPronoun(word) &&
+         !Dictionary.isPreposition(word)
+}
+
+/**
  * Extract Text from a given file
- * @param {String}    filename path to file to be parsed
+ * @param {String}    path path to file to be parsed
  * @return {String}   return empty string in case of error
  */
-function extractText(filename) {
-  // read file full file content in a string
-  // return such string
+function extractText(path) {
+  return fs.readFileSync(path)
 }
 
 /**
  * Generate frequency matrix
  * @param {String}  content
- * @return {Array[String=>String]}
+ * @return {Object[Key=>String]}
  */
 function countWords(content) {
-  // for each word
-    // if is blacklisted continue
-    // else count and add to result matrix
-  // return the resulted matrix
+  let frequencies = {}
+  content.explode(' ').forEach(word => {
+    word = word.trim().replace(/\W/g, '')
+    if (word.length > 0 && isWhitelisted(word)) {
+      // else count and add to result matrix
+      frequencies[word] = Number.isInteger(frequencies[word])
+                          ? frequencies[word]++
+                          : 1
+    }
+  })
+  return frequencies
 }
 
 /**
  * Printout on the console the frequency matrix
- * @param {Array[String=>String]} frequencies
+ * @param {Object[Key=>String]} frequencies
  */
 function printMatrix(frequencies) {
   // pretty print as json object
-  // console.log(JSON.stringify(frequencies, null, 2))
+  console.log(JSON.stringify(frequencies, null, 2))
 }
 
 /**
