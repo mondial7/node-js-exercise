@@ -1,4 +1,8 @@
-Testing (manual)
+### Exercise for v&v class
+
+### Testing process
+#### (manual and completely incomplete)
+
   - case1 (in same folder)
     - debugging
   - case1 (in subfolder)
@@ -10,7 +14,6 @@ Testing (manual)
   - case4
     - bug?: case sensitive counter -> fixed
     - re-run all cases in same order
-
 
 Potential refactoring
 
